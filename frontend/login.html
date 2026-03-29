@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - UTN</title>
+    <link rel="stylesheet" href="login.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+    </style>
+</head>
+<body>
+    <div class="top-bar"></div>
+    
+    <div class="login-container">
+        <div class="logo-placeholder">
+            <img src="./resources/logo-utn-frm.png" alt="Logo UTN FRM" id="utn-logo">
+        </div>
+
+        <form id="login-form">
+            <div class="input-group">
+                <label for="user">USUARIO</label>
+                <input type="text" id="user" name="user" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="pass">PASSWORD</label>
+                <input type="password" id="pass" name="pass" required>
+            </div>
+
+            <div id="error-message" class="error-message"></div>
+
+            <button type="submit" class="btn-ingresar">Ingresar</button>
+        </form>
+    </div>
+
+    <div class="bottom-bar"></div>
+
+    <script src="login.js"></script>
+</body>
+</html>

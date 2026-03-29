@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="lista.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-left-logo">
+            <img src="./resources/logo-utn-frm.png" alt="Logo UTN" class="small-logo">
+        </div>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Buscar usuario...">
+            <button id="search-btn">
+                <img src="./resources/icons8-search-50.png" alt="Buscar" width="20" id="search-icon">
+            </button>
+        </div>
+
+        <div class="top-right-elements">
+            <a href="login.html" class="exit-btn">
+                <img src="./resources/icons8-salida-50.png" alt="Salir">
+            </a>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div id="error-message" class="error-message" style="display: none;">No se encontró dicho usuario.</div>
+        
+        <table id="users-table">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>usuario</th>
+                    <th>bloqueado</th>
+                    <th>apellido</th>
+                    <th>nombre</th>
+                    <th>bloquear</th>
+                    <th>desbloquear</th>
+                </tr>
+            </thead>
+            <tbody id="users-tbody">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="bottom-bar">
+        <span>Todos los derechos son reservados.</span>
+    </div>
+
+    <script src="lista.js"></script>
+</body>
+</html>

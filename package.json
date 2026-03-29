@@ -1,0 +1,27 @@
+{
+  "name": "practico1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\"",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.14",
+    "typescript": "^6.0.2"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.6",
+    "@types/pg": "^8.20.0",
+    "express": "^5.2.1",
+    "pg": "^8.20.0"
+  }
+}
