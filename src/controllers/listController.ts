@@ -11,12 +11,12 @@ export const procesarLista = async (req: Request, res: Response) => {
 
         if (usuario) {
             const result = await pool.query(
-            "SELECT id, usuario, bloqueado, apellido, nombre FROM usuarios_utn WHERE usuario LIKE $1 ORDER BY id ASC",
+            "SELECT id, usuario, clave, bloqueado, apellido, nombre FROM usuarios_utn WHERE usuario LIKE $1 ORDER BY id ASC",
             [`%${usuario}%`]
             );
             return res.json(result.rows);
         } else {
-            const result = await pool.query("SELECT id, usuario, bloqueado, apellido, nombre FROM usuarios_utn ORDER BY id ASC");
+            const result = await pool.query("SELECT id, usuario, clave, bloqueado, apellido, nombre FROM usuarios_utn ORDER BY id ASC");
             return res.json(result.rows);
         }
     }

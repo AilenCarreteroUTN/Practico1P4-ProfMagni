@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
     <link rel="stylesheet" href="lista.css">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
     </style>
@@ -16,43 +15,127 @@
             <img src="./resources/logo-utn-frm.png" alt="Logo UTN" class="small-logo">
         </div>
 
-        <!-- Barra de búsqueda -->
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="Buscar usuario...">
-            <button id="search-btn">
-                <img src="./resources/icons8-search-50.png" alt="Buscar" width="20" id="search-icon">
-            </button>
+            <input type="text" id="search-input" placeholder="">
+            <img src="./resources/icons8-search-50.png" alt="Buscar" class="search-icon">
         </div>
 
         <div class="top-right-elements">
-            <a href="login.html" class="exit-btn">
-                <img src="./resources/icons8-salida-50.png" alt="Salir">
-            </a>
+            <div class="user-dropdown-container">
+                <div class="user-avatar" id="user-avatar-btn">U</div>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <button class="dropdown-item" id="btn-nuevo-usuario">
+                        <img src="./resources/create-button.png" alt="Nuevo Usuario" class="dropdown-icon">
+                        Nuevo usuario
+                    </button>
+                    <a href="login.html" class="dropdown-item">
+                        <img src="./resources/icons8-salida-50.png" alt="Salir" class="dropdown-icon">
+                        Salir
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="table-container">
         <div id="error-message" class="error-message" style="display: none;">No se encontró dicho usuario.</div>
         
-        <table id="users-table">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>usuario</th>
-                    <th>bloqueado</th>
-                    <th>apellido</th>
-                    <th>nombre</th>
-                    <th>bloquear</th>
-                    <th>desbloquear</th>
-                </tr>
-            </thead>
-            <tbody id="users-tbody">
-            </tbody>
-        </table>
+        <div class="table-card">
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th style="border-top-left-radius: 8px; border-bottom-left-radius: 8px;">ID</th>
+                        <th>USUARIO</th>
+                        <th>CONTRASEÑA</th>
+                        <th>NOMBRE</th>
+                        <th style="border-top-right-radius: 8px; border-bottom-right-radius: 8px;">ACCIÓN</th>
+                    </tr>
+                </thead>
+                <tbody id="users-tbody">
+                </tbody>
+            </table>
+        </div>
     </div>
 
-    <div class="bottom-bar">
-        <span>Todos los derechos son reservados.</span>
+    <div class="footer-container">
+        <p>Todos los derechos son reservados.</p>
+    </div>
+
+    <!-- Modal de edición de usuario -->
+    <div class="modal-overlay" id="edit-modal" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Editar Usuario</h2>
+                <button class="icon-btn modal-delete-btn" id="modal-delete-btn" title="Eliminar usuario">
+                    <img src="./resources/delete-button.png" alt="Eliminar" class="icon-action-image">
+                </button>
+            </div>
+
+            <form id="edit-form">
+                <input type="hidden" id="edit-id">
+
+                <div class="modal-input-group">
+                    <label for="edit-usuario">Usuario</label>
+                    <input type="text" id="edit-usuario" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="edit-clave">Contraseña</label>
+                    <input type="password" id="edit-clave" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="edit-apellido">Apellido</label>
+                    <input type="text" id="edit-apellido" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="edit-nombre">Nombre</label>
+                    <input type="text" id="edit-nombre" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-cancelar" id="btn-cancel-edit">Cancelar</button>
+                    <button type="submit" class="btn-modal btn-guardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de creación de usuario -->
+    <div class="modal-overlay" id="create-modal" style="display: none;">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h2>Nuevo Usuario</h2>
+            </div>
+
+            <form id="create-form">
+                <div class="modal-input-group">
+                    <label for="create-usuario">Usuario</label>
+                    <input type="text" id="create-usuario" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="create-clave">Contraseña</label>
+                    <input type="password" id="create-clave" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="create-apellido">Apellido</label>
+                    <input type="text" id="create-apellido" required>
+                </div>
+
+                <div class="modal-input-group">
+                    <label for="create-nombre">Nombre</label>
+                    <input type="text" id="create-nombre" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-modal btn-cancelar" id="btn-cancel-create">Cancelar</button>
+                    <button type="submit" class="btn-modal btn-guardar">Aceptar</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="lista.js"></script>

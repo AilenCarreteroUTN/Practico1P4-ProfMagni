@@ -5,7 +5,7 @@ const pool = new Pool({
     user: "postgres",
     host: "localhost",
     database: "utn_db",
-    password: "", // Ingresar la clave personal de PostgreSQL
+    password: "4251",
     port: 5432,
 });
 
