@@ -22,6 +22,6 @@ Para poner a prueba la aplicación en tu entorno local, sigue estos pasos:
 1. **Clonar el repositorio:** Descarga el proyecto y abre una terminal en la carpeta raíz.
 2. **Preparar la Base de Datos:** En tu gestor de PostgreSQL, crea una base de datos llamada `utn_db` y ejecuta el script SQL de inicialización para crear la tabla `usuarios_utn` e insertar los datos de prueba pertinentes.
 3. **Configurar Credenciales:** En el archivo de conexión de la base de datos (dentro de `src/database/connection.ts`), reemplaza el campo del password por tu contraseña local de PostgreSQL.
-4. **Instalar las dependencias:** npm install
-5. **Ejecutar el servidor local:** npm run dev
+4. **Instalar las dependencias:** `npm install`
+5. **Ejecutar el servidor local:** `npm run dev`
 6. **Probar la Aplicación:** Abre tu navegador web de preferencia e ingresa a `http://localhost:3000/login.html` para acceder al sistema.
